@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Дипломная гадость</title>
+    <meta charset="UTF-8"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="{{'css/bootstrap.min.css'|staticfile }}">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="{{'css/pbootstrap.min.css'|staticfile }}">
+    <script src="{{'js/jquery-3.2.0.js'|staticfile }}"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="{{'js/bootstrap.min.js'|staticfile }}"></script>
+</head>
+    
+<body>
+{{ navmenu }}
+<div>
+<table>
+<thead><th>Название</th><th>Отрывок</th></thead>
+{% for row in rows%}
+    <tr><td>{{ row["name"] }}</td><td>{{ row["part"] }}</td></tr>
+{% endfor %}
+</table>    
+</div>
+
+</body>
+</html>

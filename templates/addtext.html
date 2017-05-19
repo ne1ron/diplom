@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Дипломная гадость</title>
+    <meta charset="UTF-8"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="{{'css/bootstrap.min.css'|staticfile }}">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="{{'css/pbootstrap.min.css'|staticfile }}">
+    <script src="{{'js/jquery-3.2.0.js'|staticfile }}"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="{{'js/bootstrap.min.js'|staticfile }}"></script>
+</head>
+    
+<body>
+{{ navmenu }}
+<div class="row">
+    <h3 class="text-center">Вставьте текст в поле</h1>
+    <div class="text-center col-md-8">
+	<form action="dForm.addtext" id="{{ FORM_ID }}" data-bind="true">
+        <p><textarea type="text" name="text" cols="80" rows="15" style="border:1px solid black"></textarea></p>
+		<input type="submit" class="btn btn-default" value="Разметить текст"  id="{{ FORM_ID }}_button">
+	</form>
+    </div>
+    <div class="col-md-2">
+		<p><a href="#" class="btn btn-default">Выбрать виды автоматической разметки</a></p>
+		<p><b>Выбрано:<br/> Морфологическая, Графематическая</b></p>
+        <p><a href="#" class="btn btn-default">Выбрать файлы</a></p>
+    </div>
+</div>
+</body>
+</html>

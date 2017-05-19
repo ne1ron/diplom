@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Дипломная гадость</title>
+    <meta charset="UTF-8"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="{{'css/bootstrap.min.css'|staticfile }}">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="{{'css/pbootstrap.min.css'|staticfile }}">
+    <script src="{{'js/jquery-3.2.0.js'|staticfile }}"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="{{'js/bootstrap.min.js'|staticfile }}"></script>
+</head>
+    
+<body>
+    {% block name1 %}{{  navmenu  }}{% endblock %}
+<div class="vcenter">
+    <div class="text-center btn-group btn-group-justified">
+        <p><a href="BackEnd.addtext" class="btn btn-primary btn-lg" style="width:200px" data-bind="true">Добавить текст</a></p>
+		<p><a href="BackEnd.addscheme" class="btn btn-primary btn-lg" style="width:200px" data-bind="true">Добавить свою <br/>схему разметки</a></p>
+        <p><a href="BackEnd.search" class="btn btn-primary btn-lg" style="width:200px" data-bind="true">Поиск</a></p>
+        <p><a href="BackEnd.corpus" class="btn btn-primary btn-lg" style="width:200px" data-bind="true">Коллекция</a></p>
+        <p><a href="BackEnd.about" class="btn btn-primary btn-lg" style="width:200px" data-bind="true">О программе</a></p>
+    </div>
+</div>
+</body>
+</html>

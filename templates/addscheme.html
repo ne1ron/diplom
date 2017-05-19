@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Дипломная гадость</title>
+    <meta charset="UTF-8"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="{{'css/bootstrap.min.css'|staticfile }}">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="{{'css/pbootstrap.min.css'|staticfile }}">
+    <script src="{{'js/jquery-3.2.0.js'|staticfile }}"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="{{'js/bootstrap.min.js'|staticfile }}"></script>
+</head>
+    
+<body>
+{{ navmenu }}
+<!--middlepart-->
+<div style="margin-left:20px;">
+<form action="dForm.form_function_name"  id="{{ FORM_ID }}"  data-bind="true">
+<p>Введите название для схемы разметки: <input  id="{{ FORM_ID }}_input" name="sname" type="text"></p>
+<p><input type="button" value="Загрузить файлы системы"></p>
+<p>Укажите начало строки запуска главного файла программы: <input id="{{ FORM_ID }}_input2" name="coms" type="text"></p>
+<p>Внимание главный файл должен принимать первым аргументом командной строки путь к текстовому файлу,<br/> а второй аргумент - путь к файлу результату разметки</p>
+<p><input type="submit" value="Загрузить" id="{{ FORM_ID }}_button"></p>
+</form>
+</div>
+
+<div>
+<button>Перейти к управлению схемами разметок</button>
+</div>
+ 
+</body>
+</html>
