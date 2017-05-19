@@ -13,10 +13,6 @@ class AutoAnnotation():
 	def mergeResults(self):
 		os.system('C:\Python34\python.exe C:\Python34\diplom\merge.py -m C:\Python34\diplom\mout.txt -g C:\Python34\diplom\gout.gra -o C:\Python34\diplom\output.txt -i C:\Python34\diplom\lindex.txt')
 		self.saveResult("C:\Python34\diplom\output.txt")
-	def saveResult(self,way):
-		print ("bb")
-		
-		
 
 		
 class SaveData():
@@ -43,29 +39,36 @@ class SaveData():
 			zap = per.encode('utf-8','ignore')
 			zap = zap.decode("utf-8")
 			bd.c.SQL(zap)
-			
+		f= open("C:\Python34\diplom\input.txt","w")
+		k = f.read()
+		f.close()
+		sqlAdT="INSERT INTO `texts` (`author`,`filename`,`tablename`,`text`) VALUES ('user','temp.txt','banzai1','%s');" %k;
+		
 	def updateText(self):
 		print ("uT")
 	def getTextList(self):
-		print ("gtl")
-	def delText(self):
-		print ("dT")
+		rez = bd.c.SQL("SELECT * FROM `texts`")
+		for i in rez:
+			print (i["author"]+" "")
+			print (i["text"])
+	def delText(self,id):
+		bd.c.SQL("DELETE FROM `texts` WHERE `id`="+str(id))
 
 class SchemeManager():
 	def addScheme(self,name,comm):
 		print ("oppa"+name+" "+comm+" ")
 		rez = bd.c.SQL("INSERT INTO scheme (`name`, `command`, `output`) VALUES ('"+name+"','"+comm+"','"+name+"');")
 		print (rez)
-	def delScheme(self):
-		print ("uppa")
+	def delScheme(self,id):
+		bd.c.SQL("DELETE FROM `scheme` WHERE `id`="+str(id))
 	def getList(self):
 		rez = bd.c.SQL("SELECT * FROM scheme")
 		for i in rez:
 			print (i["name"])
-		#print ("gL")
 		
 class SearchEngine():
 	def doSQL(self,sql):
 		return bd.c.SQL(sql)
-	def workSearch(self):
-		print ("wS")
+	def workSearch(self, text):
+		rez = self.doSQL("SELECT * FROM banzai1 WHERE `lexem`="+text+";")
+		print (rez)

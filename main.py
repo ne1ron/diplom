@@ -8,6 +8,8 @@ import json
 man = SchemeManager()
 ann = AutoAnnotation()
 sd = SaveData()
+se = SearchEngine()
+
 
 class dForm(htmlPy.Object):
     def __init__(self, app):
@@ -26,6 +28,7 @@ class dForm(htmlPy.Object):
     @htmlPy.Slot(str)
     def search(self, jsd):
         form_data = json.loads(jsd)
+        se.workSearch(form_data["slovo"])
         print (form_data["slovo"])
 
 
